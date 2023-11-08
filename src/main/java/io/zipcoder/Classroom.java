@@ -3,13 +3,9 @@ package io.zipcoder;
 import java.util.ArrayList;
 
 public class Classroom {
-    String firstName;
-    String lastName;
-    ArrayList<Double> examScores;
+    Student[] students;
 
-    public Classroom(String firstName, String lastName, ArrayList<Double> examScores) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.examScores = examScores;
+    public Classroom(Student[] students) {
+        this.students = students;
     }
 }
