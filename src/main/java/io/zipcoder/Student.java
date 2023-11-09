@@ -43,7 +43,7 @@ public class Student {
     // which returns the total number of exams taken by this student.
 
     public void addExamScore(double examScore) {
-        Double[] addScore = new Double[0];
+        Double[] addScore;
 
         if (this.examScore != null && this.examScore.length >1) {
             addScore = new Double[this.examScore.length + 1];
@@ -52,14 +52,14 @@ public class Student {
         }
         addScore[addScore.length - 1] = examScore;
         } else {
-            addScore[0] = examScore;
+            addScore = new Double[]{examScore};
         }
             // Make a new array list and add one to it
             // then to the last element of the array, add in examScore :D
             // this.examScore.length - 1 = is the last element OF THE NEW ARRAY***
         }
 
-    public Double setExamScore(int examNumber, double newScore) {
+    public String setExamScore(int examNumber, double newScore) {
         return null;
     }
 
