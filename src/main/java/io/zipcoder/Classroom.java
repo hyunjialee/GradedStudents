@@ -52,8 +52,8 @@ public class Classroom {
         // the other five have null
         //  This is only pertaining to OBJECT ARRAYS.
 
-        for (int i = 0 ; i <this.students.length; i++){
-            if(this.students[i] == null){
+        for (int i = 0; i < this.students.length; i++) {
+            if (this.students[i] == null) {
                 this.students[i] = student;
                 break;
             }
@@ -64,8 +64,8 @@ public class Classroom {
         // = SETTING
         // == COMPARING
 
-        for (int i = 0; i < this.students.length; i++){
-            if (students[i].getFirstName().equals(firstName) && students[i].getLastName().equals(lastName)){
+        for (int i = 0; i < this.students.length; i++) {
+            if (students[i].getFirstName().equals(firstName) && students[i].getLastName().equals(lastName)) {
                 this.students[i] = null;
                 break;
             }
@@ -74,12 +74,28 @@ public class Classroom {
         //
 
     }
-    public getStudentByScore(){
+
+    public Student[]getStudentByScore() {
         //Returns an array representation of Student objects sorted into descending order by score
         // Use Arrays.sort for sort the Score and also the student names
         // Compared the exam scores and then compare the first name and last name
+
+        Student[] studentByScore = new Student[students.length];
+
+        for (int i = 0; i < students.length; i++) {
+            // Put students into a new array to place them as scores into
+        }
+        // Using lambda expression to compare two objects to each other
+        // Need to sort array and compared each student into the array
+        // if students1 grade is equal to students2 grade then compared with last names with the student
+        // also need to compare if the last names are the same- > compare with the first name
+        // Else return the average exam score of student 1 to student 2
     }
-    public getGradeBook(){
+
+    public String getGradeBook() {
         //Hash map, key is Student Object and value is the grade given based on the percentile
+        // Create a hash map that takes in a KEY (String = letter grade) and value (double = grading curve)
+        // figure out the high and low grades
+        return null;
     }
 }
