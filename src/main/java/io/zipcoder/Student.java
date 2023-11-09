@@ -43,7 +43,8 @@ public class Student {
     // which returns the total number of exams taken by this student.
 
     public void addExamScore(double examScore) {
-        Double[] addScore;
+        Double[] addScore; // This defining it, you don't have to initialize until
+                                                // FOR LOOP and IF statement
 
         if (this.examScore != null && this.examScore.length >1) {
             addScore = new Double[this.examScore.length + 1];
@@ -54,17 +55,22 @@ public class Student {
         } else {
             addScore = new Double[]{examScore};
         }
+        this.examScore = addScore;
             // Make a new array list and add one to it
             // then to the last element of the array, add in examScore :D
             // this.examScore.length - 1 = is the last element OF THE NEW ARRAY***
-        }
+    }
 
-    public String setExamScore(int examNumber, double newScore) {
-        return null;
+    public void setExamScore(int examNumber, double newScore) {
+
+        // examNumber is the index in the list of this.examScore
+        // if its equal to the examNumber then set it with a different value "newScore"
+
     }
 
     public Double getAverageExamScore() {
         return null;
+        // Taking the sum of all the scores and then dividing the length of it  :)
     }
 
     @Override
