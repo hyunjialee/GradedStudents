@@ -62,6 +62,7 @@ public class Student {
     }
 
     public void setExamScore(int examNumber, double newScore) {
+        this.examScore[examNumber - 1] = newScore;
 
         // examNumber is the index in the list of this.examScore
         // if its equal to the examNumber then set it with a different value "newScore"
@@ -69,13 +70,24 @@ public class Student {
     }
 
     public Double getAverageExamScore() {
-        return null;
+        double sum = 0;
+        for (int i = 0; i < this.examScore.length; i++) {
+            sum += this.examScore[i];
+        }
+        return sum / this.examScore.length;
         // Taking the sum of all the scores and then dividing the length of it  :)
     }
 
     @Override
     public String toString() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Student Name: " + this.firstName + " " + this.lastName);
+        sb.append("\nAverage Score: " + getAverageExamScore());
+        sb.append("\n" + getExamScore());
+
+
+        return sb.toString();
     }
 }
 
