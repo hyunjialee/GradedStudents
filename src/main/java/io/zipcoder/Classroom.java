@@ -60,13 +60,26 @@ public class Classroom {
         }
     }
 
-    public removeStudent(String firstName, String lastName) {
+    public void removeStudent(String firstName, String lastName) {
+        // = SETTING
+        // == COMPARING
+
+        for (int i = 0; i < this.students.length; i++){
+            if (students[i].getFirstName().equals(firstName) && students[i].getLastName().equals(lastName)){
+                this.students[i] = null;
+                break;
+            }
+        }
+        // for loop for i student equals to the firstName and the lastName
+        //
 
     }
     public getStudentByScore(){
-
+        //Returns an array representation of Student objects sorted into descending order by score
+        // Use Arrays.sort for sort the Score and also the student names
+        // Compared the exam scores and then compare the first name and last name
     }
     public getGradeBook(){
-
+        //Hash map, key is Student Object and value is the grade given based on the percentile
     }
 }
