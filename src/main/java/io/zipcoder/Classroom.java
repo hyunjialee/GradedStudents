@@ -75,7 +75,7 @@ public class Classroom {
 
     }
 
-    public Student[]getStudentByScore() {
+    public Student[] getStudentByScore() {
         //Returns an array representation of Student objects sorted into descending order by score
         // Use Arrays.sort for sort the Score and also the student names
         // Compared the exam scores and then compare the first name and last name
@@ -90,7 +90,10 @@ public class Classroom {
         // if students1 grade is equal to students2 grade then compared with last names with the student
         // also need to compare if the last names are the same- > compare with the first name
         // Else return the average exam score of student 1 to student 2
+        return null;
     }
+
+
 
     public String getGradeBook() {
         //Hash map, key is Student Object and value is the grade given based on the percentile
