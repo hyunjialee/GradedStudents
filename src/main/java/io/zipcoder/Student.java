@@ -48,10 +48,10 @@ public class Student {
 
         if (this.examScore != null && this.examScore.length >1) {
             addScore = new Double[this.examScore.length + 1];
-        for (int i = 0; i < this.examScore.length; i++) {
+            for (int i = 0; i < this.examScore.length; i++) {
             addScore[i] = this.examScore[i];
-        }
-        addScore[addScore.length - 1] = examScore;
+            }
+            addScore[addScore.length - 1] = examScore;
         } else {
             addScore = new Double[]{examScore};
         }

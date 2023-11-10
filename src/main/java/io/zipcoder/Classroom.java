@@ -1,7 +1,8 @@
 package io.zipcoder;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.Assert;
+
+import java.util.*;
 
 public class Classroom {
     Student[] students;
@@ -83,22 +84,58 @@ public class Classroom {
         Student[] studentByScore = new Student[students.length];
 
         for (int i = 0; i < students.length; i++) {
+            studentByScore[i] = students[i];
             // Put students into a new array to place them as scores into
-        }
-        // Using lambda expression to compare two objects to each other
-        // Need to sort array and compared each student into the array
-        // if students1 grade is equal to students2 grade then compared with last names with the student
-        // also need to compare if the last names are the same- > compare with the first name
-        // Else return the average exam score of student 1 to student 2
-        return null;
+        } Arrays.sort(studentByScore, (student1, student2) -> {
+            // Using lambda to compare two objects to each other student1 and student2
+            // Need to sort array and compared each student into the array
+            // parameter -> expression || here are using (parameter 1, parameter 2) -> expression
+
+            if (student1.getAverageExamScore().equals(student2.getAverageExamScore())) {
+                // Comparing by test scores
+
+                if (student1.getFirstName().equals(student2.getFirstName())) {
+                    return student1.getLastName().compareTo(student2.getLastName());
+                    // Comparing by last names if first name is equal to each other
+
+                } else {
+                    // Returning the first name of the student if names are different
+                    return student1.getFirstName().compareTo(student2.getFirstName());
+                }
+            } else {
+                return student2.getAverageExamScore().compareTo(student1.getAverageExamScore());
+                // Returning the array into descending order based on the exam score of the student
+            }
+        });
+            return studentByScore; // The exam scores sorted in descending order
     }
 
+    public Map<Student, Character> getGradeBook() {
 
+        Map<Student, Character> studentGrade = new HashMap<>();
+        // Hash map, key is student and value is the letter grade given based on the percentile of exam score average
 
-    public String getGradeBook() {
-        //Hash map, key is Student Object and value is the grade given based on the percentile
-        // Create a hash map that takes in a KEY (String = letter grade) and value (double = grading curve)
-        // figure out the high and low grades
-        return null;
+        Student[] orderedStudents = getStudentByScore();
+
+        Double highestScore = orderedStudents[0].getAverageExamScore();
+
+        for(Student student: orderedStudents){
+            char letterGrade;
+            // Loop through all the students that are sorted
+            if (student.getAverageExamScore() >= highestScore * .89){
+                letterGrade = 'A'; // 90th percentile
+            } else if (student.getAverageExamScore() >= highestScore * .71) {
+                letterGrade = 'B'; // 71 - 89th percentile
+            } else if (student.getAverageExamScore() >= highestScore * .51) {
+                letterGrade = 'C'; // 51 - 70th percentile
+            } else if (student.getAverageExamScore() >= highestScore * .11) {
+                letterGrade = 'D'; // 11 - 50th percentile
+            } else {
+                letterGrade = 'F'; // 11th percentile and lower
+            }
+            studentGrade.put(student, letterGrade);
+            //Hash Map used with student and their letter grade
+        }
+        return studentGrade;
     }
 }
