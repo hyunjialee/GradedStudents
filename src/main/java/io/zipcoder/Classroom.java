@@ -94,6 +94,9 @@ public class Classroom {
             if (student1.getAverageExamScore().equals(student2.getAverageExamScore())) {
                 // Comparing by test scores
 
+                //*** Need to add an if statement when there is a student that is not being compared to
+                // return back the student that is not being compared
+
                 if (student1.getFirstName().equals(student2.getFirstName())) {
                     return student1.getLastName().compareTo(student2.getLastName());
                     // Comparing by last names if first name is equal to each other
